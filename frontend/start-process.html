@@ -1,0 +1,23 @@
+<h2>Start Hiring Process</h2>
+<form id="startForm">
+  <label>Name: <input name="applicantName" required></label><br>
+  <label>Phone: <input name="phoneNumber" required></label><br>
+  <label>Email: <input name="email" required></label><br>
+  <button type="submit">Start</button>
+</form>
+<p id="result"></p>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/api.js"></script>
+<script>
+document.getElementById('startForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    applicantName: form.applicantName.value,
+    phoneNumber: form.phoneNumber.value,
+    email: form.email.value
+  };
+  const res = await apiRequest('/hiring/start', 'POST', data);
+  document.getElementById('result').innerText = res;
+});
+</script>

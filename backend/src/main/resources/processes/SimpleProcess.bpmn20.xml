@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bpmn2:definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef" xmlns:modeler="http://activiti.com/modeler" modeler:version="1.0en" modeler:exportDateTime="20250416154323622" modeler:modelId="1" modeler:modelVersion="2" modeler:modelLastUpdated="1744791665419">
+  <bpmn2:process id="SimpleProcess" name="SimpleProcess" isExecutable="true">
+    <extensionElements>
+      <modeler:deleteallvariables xmlns:modeler="http://activiti.com/modeler" modeler:deleteallvariables="false"/>
+    </extensionElements>
+    <bpmn2:startEvent id="startEvent1">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[startEvent1]]></modeler:editor-resource-id>
+      </extensionElements>
+      <bpmn2:outgoing>sid-E1887234-743A-4DC1-B5D7-178249F7563B</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:userTask id="sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96" name="Review Document" activiti:candidateUsers="1">
+      <extensionElements>
+        <modeler:allow-send-email><![CDATA[true]]></modeler:allow-send-email>
+        <modeler:user-info-email-1><![CDATA[admin@app.activiti.com]]></modeler:user-info-email-1>
+        <modeler:user-info-lastname-1><![CDATA[Administrator]]></modeler:user-info-lastname-1>
+        <modeler:activiti-idm-candidate-user><![CDATA[true]]></modeler:activiti-idm-candidate-user>
+        <modeler:initiator-can-complete><![CDATA[true]]></modeler:initiator-can-complete>
+        <modeler:deactivate-user-task-reassignment><![CDATA[false]]></modeler:deactivate-user-task-reassignment>
+        <modeler:editor-resource-id><![CDATA[sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96]]></modeler:editor-resource-id>
+      </extensionElements>
+      <bpmn2:incoming>sid-E1887234-743A-4DC1-B5D7-178249F7563B</bpmn2:incoming>
+      <bpmn2:outgoing>sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="sid-E1887234-743A-4DC1-B5D7-178249F7563B" sourceRef="startEvent1" targetRef="sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[sid-E1887234-743A-4DC1-B5D7-178249F7563B]]></modeler:editor-resource-id>
+      </extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:endEvent id="sid-405B95B8-B438-4748-8171-AE7CBE115CD8">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[sid-405B95B8-B438-4748-8171-AE7CBE115CD8]]></modeler:editor-resource-id>
+      </extensionElements>
+      <bpmn2:incoming>sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89" sourceRef="sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96" targetRef="sid-405B95B8-B438-4748-8171-AE7CBE115CD8">
+      <extensionElements>
+        <modeler:editor-resource-id><![CDATA[sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89]]></modeler:editor-resource-id>
+      </extensionElements>
+    </bpmn2:sequenceFlow>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_SimpleProcess">
+    <bpmndi:BPMNPlane bpmnElement="SimpleProcess" id="BPMNPlane_SimpleProcess">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="30.0" width="30.0" x="74.99999776482589" y="159.99999120831527"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96" id="BPMNShape_sid-78B8F676-5F99-4FD5-ADB6-F930C4A85C96">
+        <omgdc:Bounds height="80.00000000000001" width="100.00000000000003" x="209.9999937415125" y="119.99999642372141"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-405B95B8-B438-4748-8171-AE7CBE115CD8" id="BPMNShape_sid-405B95B8-B438-4748-8171-AE7CBE115CD8">
+        <omgdc:Bounds height="28.0" width="28.0" x="530.4999679625048" y="160.99999117851294"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-E1887234-743A-4DC1-B5D7-178249F7563B" id="BPMNEdge_sid-E1887234-743A-4DC1-B5D7-178249F7563B">
+        <omgdi:waypoint x="104.99999776482589" y="174.99999120831527"/>
+        <omgdi:waypoint x="157.4999957531692" y="174.99999120831527"/>
+        <omgdi:waypoint x="157.4999957531692" y="159.99999642372143"/>
+        <omgdi:waypoint x="209.9999937415125" y="159.99999642372143"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89" id="BPMNEdge_sid-8366C0E9-9A18-44CD-B8B9-F85B4CBD9A89">
+        <omgdi:waypoint x="309.9999937415125" y="159.99999642372143"/>
+        <omgdi:waypoint x="420.24998085200866" y="159.99999642372143"/>
+        <omgdi:waypoint x="420.24998085200866" y="174.99999117851294"/>
+        <omgdi:waypoint x="530.4999679625048" y="174.99999117851294"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

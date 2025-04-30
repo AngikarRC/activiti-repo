@@ -1,0 +1,24 @@
+<h2>Telephone Interview</h2>
+<link rel="stylesheet" href="css/style.css">
+<input id="taskId" placeholder="Task ID" />
+<br/>
+<label><input type="radio" name="result" value="true" checked /> Approve</label>
+<label><input type="radio" name="result" value="false" /> Reject</label>
+<button onclick="completeTask()">Submit</button>
+<p id="status"></p>
+<script src="js/api.js"></script>
+<script>
+async function completeTask() {
+  const taskId = document.getElementById("taskId").value;
+  const selectedOutcome = document.querySelector('input[name="result"]:checked').value;
+  const data = {
+    telephoneInterviewOutcome: selectedOutcome === 'true'
+  };
+  try{
+  const res = await apiRequest(`/hiring/complete/${taskId}`, 'POST', data);
+  document.getElementById("status").innerText = "res";
+   } catch(err){
+        document.getElementById("status").innerText = "Error :"+ err.message;
+   }
+  }
+</script>

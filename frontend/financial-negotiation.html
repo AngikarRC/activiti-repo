@@ -1,0 +1,17 @@
+<h2>Financial Negotiation</h2>
+<link rel="stylesheet" href="css/style.css">
+<input id="taskId" placeholder="Task ID" />
+<br/>
+<label><input type="radio" name="financialOk" value="true" checked /> Accept</label>
+<label><input type="radio" name="financialOk" value="false" /> Reject</label>
+<button onclick="submit()">Submit</button>
+<p id="done"></p>
+<script src="js/api.js"></script>
+<script>
+async function submit() {
+  const taskId = document.getElementById("taskId").value;
+  const result = document.querySelector('input[name="financialOk"]:checked').value;
+  await apiRequest(`/hiring/complete/${taskId}`, 'POST', { financialOk: result === 'true' });
+  document.getElementById("done").innerText = "Done";
+}
+</script>

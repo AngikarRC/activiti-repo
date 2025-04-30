@@ -1,0 +1,19 @@
+<h2>Tasks</h2>
+<link rel="stylesheet" href="css/style.css">
+<input id="user" placeholder="Enter username" />
+<button onclick="loadTasks()">Load Tasks</button>
+<ul id="taskList"></ul>
+<script src="js/api.js"></script>
+<script>
+async function loadTasks() {
+  const user = document.getElementById("user").value;
+  const tasks = await apiRequest(`/hiring/tasks/${user}`);
+  const ul = document.getElementById("taskList");
+  ul.innerHTML = "";
+  tasks.forEach(t => {
+    const li = document.createElement("li");
+    li.innerText = `${t.name} (ID: ${t.id})`;
+    ul.appendChild(li);
+  });
+}
+</script>
